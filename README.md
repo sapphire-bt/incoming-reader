@@ -185,7 +185,7 @@ Models displaying different levels of damage are separated into folders correspo
 ---
 
 ### "ppm" Folder
-Contains all texture files. Texture are encoded as [PPM](https://en.wikipedia.org/wiki/Netpbm) files, an open-source bitmap format.
+Contains all texture files. Textures are encoded as [PPM](https://en.wikipedia.org/wiki/Netpbm) files, an open-source bitmap format.
 
 ---
 

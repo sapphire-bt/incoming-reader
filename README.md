@@ -87,15 +87,16 @@ See the sections below for further details on each folder.
 Contains several files related to the levels of the game, each contained in its own folder. The folder for the first level, *Africa*, contains:
 
     Incoming/
-    └── africa/
-        ├── africa.mdl
-        ├── africa.odl
-        ├── africa.wdl
-        ├── africa_action.mdl
-        ├── africa_virus.mdl
-        ├── africa_virus.odl
-        ├── city2tc.bin
-        └── tland1.bin
+    └── asc/
+        └── africa/
+            ├── africa.mdl
+            ├── africa.odl
+            ├── africa.wdl
+            ├── africa_action.mdl
+            ├── africa_virus.mdl
+            ├── africa_virus.odl
+            ├── city2tc.bin
+            └── tland1.bin
 
 A brief overview of the file types:
 
@@ -129,6 +130,27 @@ The texture index is always the last digit of the first byte, i.e. 5, 5, 6, 6 fo
 ```
 
 Textures are zero-indexed.
+
+The texture position is determined from the remainder of the modulus operation. Terrain textures are 256×256px, however only a quarter (128×128px) segment is shown per tile. There are 16 possible positions (highlighted by the red square):
+
+| Value  | Position
+| ---    | ---
+| `0x00` | ![Position 1](https://i.imgur.com/GpEtcmf.png)
+| `0x10` | ![Position 2](https://i.imgur.com/AYjBWeT.png)
+| `0x20` | ![Position 3](https://i.imgur.com/T0zVo3d.png)
+| `0x30` | ![Position 4](https://i.imgur.com/NU3iPuc.png)
+| `0x40` | ![Position 5](https://i.imgur.com/OHWU6fK.png)
+| `0x50` | ![Position 6](https://i.imgur.com/tScH4nE.png)
+| `0x60` | ![Position 7](https://i.imgur.com/LJx2van.png)
+| `0x70` | ![Position 8](https://i.imgur.com/YvNoFVS.png)
+| `0x80` | ![Position 9](https://i.imgur.com/OVyUrgG.png)
+| `0x90` | ![Position 10](https://i.imgur.com/Gkw86Bi.png)
+| `0xA0` | ![Position 11](https://i.imgur.com/uQCOYTj.png)
+| `0xB0` | ![Position 12](https://i.imgur.com/6reACXD.png)
+| `0xC0` | ![Position 13](https://i.imgur.com/neWod5M.png)
+| `0xD0` | ![Position 14](https://i.imgur.com/mQDiKbk.png)
+| `0xE0` | ![Position 15](https://i.imgur.com/0lK4PFK.png)
+| `0xF0` | ![Position 16](https://i.imgur.com/n17YSvy.png)
 
 The second byte is a [bitmask](https://en.wikipedia.org/wiki/Mask_(computing)) of texture properties, such as rotation/mirroring:
 

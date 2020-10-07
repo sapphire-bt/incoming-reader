@@ -123,10 +123,10 @@ The first byte contains two values: the texture index, and its position. Levels 
 The texture index is always the last digit of the first byte, i.e. 5, 5, 6, 6 for the bytes shown above, and can be quickly calculated using the modulus operator:
 
 ```js
-0x85 % 10 // 5
-0x05 % 10 // 5
-0x86 % 10 // 6
-0x06 % 10 // 6
+0x85 % 0x10 // 5
+0x05 % 0x10 // 5
+0x86 % 0x10 // 6
+0x06 % 0x10 // 6
 ```
 
 Textures are zero-indexed.

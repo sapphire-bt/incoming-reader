@@ -120,18 +120,27 @@ An excerpt from Africa's file, split into rows of two bytes:
 
 The first byte contains two values: the texture index, and its position. Levels use eight textures for terrain which are specified inside the `.odl` file.
 
-The texture index is always the last digit of the first byte, i.e. 5, 5, 6, 6 for the bytes shown above, and can be quickly calculated using the modulus operator:
+The texture index is determined by the first four bits. One way to obtain the index is to use a bitwise AND:
 
 ```js
-0x85 % 0x10 // 5
-0x05 % 0x10 // 5
-0x86 % 0x10 // 6
-0x06 % 0x10 // 6
+0x85 & 0xF // 5
+0x05 & 0xF // 5
+0x86 & 0xF // 6
+0x06 & 0xF // 6
 ```
 
 Textures are zero-indexed.
 
-The texture position is determined from the remainder of the modulus operation. Terrain textures are 256×256px, however only a quarter (128×128px) segment is shown per tile. There are 16 possible positions (highlighted by the red square):
+The texture position is determined by the last four bits. A bitwise AND can be used here again:
+
+```js
+0x85 & 0xF0 // 8
+0x05 & 0xF0 // 0
+0x86 & 0xF0 // 8
+0x06 & 0xF0 // 0
+```
+
+Terrain textures are 256×256px, however only a quarter (128×128px) segment is shown per tile. There are 16 possible positions (highlighted by the red square):
 
 | Value  | Position
 | ---    | ---

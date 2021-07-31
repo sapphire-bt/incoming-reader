@@ -1,20 +1,22 @@
 # Incoming .IAN Reader
-This is a JavaScript plugin for reading/writing .IAN files - a proprietary 3D model format used by the 1998 video game [Incoming](https://en.wikipedia.org/wiki/Incoming_(1998_video_game)).
+This is a JavaScript plugin for reading/writing .IAN files: a simple proprietary 3D model format used for the 1998 video game [Incoming](https://en.wikipedia.org/wiki/Incoming_(1998_video_game)).
 
-This format was reverse engineered and as a result there are still values whose meaning are unknown. These values aren't included in the data returned by the plugin, but guesses to what they are/notes can be found in the source code.
+This format was reverse engineered without a debugger/disassembler; as a result there are still values whose purpose is unknown. These values aren't included in the data returned by the plugin but guesses as to what they are can be found in the source code.
+
+A Python script is also included for batch exporting to OBJ format.
 
 ## Key Features
 * File data can be used with [three.js](https://threejs.org/) to render models in-browser:
 
-!["Light Fighter" model shown in three.js](https://s7.gifyu.com/images/incomingf1632cf37282af9c.gif)
+!["Light Fighter" model shown in three.js](https://www.bunnytrack.net/images/github/incoming/test.gif)
 
 * Convert between IAN and OBJ, allowing for custom in-game models and model export to programs such as Blender, Maya, etc.
 
-!["Light Fighter" model shown in Blender](https://i.imgur.com/t5DWl40.jpg)
+!["Light Fighter" model shown in Blender](https://www.bunnytrack.net/images/github/incoming/blender.jpg)
 
 * OBJ files can be converted to IAN format allowing custom models in-game:
 
-![Custom model in-game](https://i.imgur.com/xvCm38T.png)
+![Custom model in-game](https://www.bunnytrack.net/images/github/incoming/custom.png)
 
 ## How to Use
 Include `incoming-reader.js` in the page and pass an `ArrayBuffer` of the .IAN file to the global `IncomingReader` function:

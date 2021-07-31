@@ -8,7 +8,7 @@ A Python script is also included for batch exporting to OBJ format.
 ## Key Features
 * File data can be used with [three.js](https://threejs.org/) to render models in-browser:
 
-!["Light Fighter" model shown in three.js](https://www.bunnytrack.net/images/github/incoming/test.gif)
+!["Light Fighter" model shown in three.js](https://www.bunnytrack.net/images/github/incoming/incoming.gif)
 
 * Convert between IAN and OBJ, allowing for custom in-game models and model export to programs such as Blender, Maya, etc.
 

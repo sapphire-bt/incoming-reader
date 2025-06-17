@@ -5,6 +5,8 @@ This format was reverse engineered without a debugger/disassembler; as a result 
 
 A Python script is also included for batch exporting to OBJ format.
 
+Also available as a Node.js script, written in TypeScript.
+
 ## Key Features
 * File data can be used with [three.js](https://threejs.org/) to render models in-browser:
 
@@ -19,6 +21,9 @@ A Python script is also included for batch exporting to OBJ format.
 ![Custom model in-game](https://www.bunnytrack.net/images/github/incoming/custom.png)
 
 ## How to Use
+
+### Browser script
+
 Include `incoming-reader.js` in the page and pass an `ArrayBuffer` of the .IAN file to the global `IncomingReader` function:
 
 ```html
@@ -38,6 +43,20 @@ Include `incoming-reader.js` in the page and pass an `ArrayBuffer` of the .IAN f
         }
     })
 </script>
+```
+
+### Node.js
+
+From the `TypeScript` folder, run:
+
+```shell
+npm install
+```
+
+Now you can use the script as follows:
+
+```shell
+node dist/index.js --export lfighter.ian --output lfighter.obj
 ```
 
 ## Methods

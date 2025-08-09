@@ -125,7 +125,7 @@ export default class IncomingModelFile {
     // Reads mesh data from the buffer, assigns it to the class instance, then returns it.
     parseData(): MeshData {
         this.faces = this.readFaces();
-        this.vertices = this.readVerticies();
+        this.vertices = this.readVertices();
         this.hasParsedData = true;
 
         return {
@@ -160,7 +160,7 @@ export default class IncomingModelFile {
         return faces;
     }
 
-    readVerticies(): VertexInfo[] {
+    readVertices(): VertexInfo[] {
         const vertices: VertexInfo[] = [];
 
         this.offset = this.verticesOffset;
